@@ -29,7 +29,7 @@ def get_response_from_agent(llm_id, query, allow_search, system_prompt, provider
     agent = create_react_agent(
         model=llm,
         tools=tools,
-        state_modifier=system_prompt
+        messages_modifier=system_prompt
     )
 
     state = {"messages": query}
