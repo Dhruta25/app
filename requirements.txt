@@ -9,7 +9,7 @@ langchain-core
 langchain-openai
 langchain-groq
 langchain-community
-langgraph
+langgraph==0.2.14
 
 # Streamlit frontend
 streamlit
