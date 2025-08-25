@@ -3,7 +3,6 @@ uvicorn
 pydantic
 python-dotenv
 
-# LangChain core & providers
 langchain
 langchain-core
 langchain-openai
@@ -11,12 +10,7 @@ langchain-groq
 langchain-community
 langgraph==0.2.14
 
-# Streamlit frontend
 streamlit
 requests
-
-# Tavily Search Tool
 tavily-python
-
-# Typing (for older Python versions compatibility)
 typing-extensions
