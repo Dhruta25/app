@@ -1,21 +1,17 @@
 import os
 import streamlit as st
 from dotenv import load_dotenv
-
-# Load environment variables
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-# LangChain / LangGraph imports
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.messages import AIMessage
 from langgraph.prebuilt import create_react_agent
 
-# ---------------------- AI Agent Logic ----------------------
+#  AI Agent Logic 
 def get_response_from_agent(llm_id, query, allow_search, system_prompt, provider):
     if provider == "Groq":
         llm = ChatGroq(model=llm_id)
@@ -41,7 +37,7 @@ def get_response_from_agent(llm_id, query, allow_search, system_prompt, provider
         return {"response": "⚠️ No response from agent"}
     return {"response": ai_messages[-1]}
 
-# ---------------------- Streamlit UI ----------------------
+#  frontend part(streamlit)
 st.set_page_config(page_title="LangGraph Agent UI", layout="centered")
 st.title("🤖 AI Chatbot Agents")
 st.write("Create and interact with the AI agents!")
